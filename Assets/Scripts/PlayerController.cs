@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +5,6 @@ public class PlayerController : MonoBehaviour
 {
  // Rigidbody of the player.
  private Rigidbody rb; 
- private int count;
 
  // Movement along X and Y axes.
  private float movementX;
@@ -22,7 +18,6 @@ public class PlayerController : MonoBehaviour
     {
  // Get and store the Rigidbody component attached to the player.
         rb = GetComponent<Rigidbody>();
-        count = 0; 
     }
  
  // This function is called when a move input is detected.
@@ -38,23 +33,23 @@ public class PlayerController : MonoBehaviour
 
  // FixedUpdate is called once per fixed frame-rate frame.
  private void FixedUpdate() 
-
     {
  // Create a 3D movement vector using the X and Y inputs.
         Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
 
-             void OnTriggerEnter (Collider other) 
-   {
-       if (other.gameObject.CompareTag("PickUp")) 
-       {
-           other.gameObject.SetActive(false);
-       }
-   }
-    // Apply force to the Rigidbody to move the player.
+ // Apply force to the Rigidbody to move the player.
         rb.AddForce(movement * speed); 
     }
-      void OnTriggerEnter(Collider other) 
-   {
-   other.gameObject.SetActive(false);
-   }
+
+ void OnTriggerEnter(Collider other) 
+    {
+ // Check if the object the player collided with has the "PickUp" tag.
+ if (other.gameObject.CompareTag("PickUp")) 
+        {
+ // Deactivate the collided object (making it disappear).
+            other.gameObject.SetActive(false);
+        }
+    }
+
+
 }
