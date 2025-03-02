@@ -1,10 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
  // Rigidbody of the player.
  private Rigidbody rb; 
+ 
+ // Setting the score
+ private int count; 
 
  // Movement along X and Y axes.
  private float movementX;
@@ -13,11 +17,16 @@ public class PlayerController : MonoBehaviour
  // Speed at which the player moves.
  public float speed = 0; 
 
+ public TextMeshProUGUI countText; 
+
  // Start is called before the first frame update.
  void Start()
     {
  // Get and store the Rigidbody component attached to the player.
         rb = GetComponent<Rigidbody>();
+        count = 0; // Set the count as 0.
+
+        SetCountText();
     }
  
  // This function is called when a move input is detected.
@@ -31,8 +40,13 @@ public class PlayerController : MonoBehaviour
         movementY = movementVector.y; 
     }
 
+    void SetCountText() 
+   {
+       countText.text =  "Score 12/" + count.ToString();
+   }
+
  // FixedUpdate is called once per fixed frame-rate frame.
- private void FixedUpdate() 
+ private void FixedUpdate()
     {
  // Create a 3D movement vector using the X and Y inputs.
         Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
@@ -41,15 +55,16 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * speed); 
     }
 
- void OnTriggerEnter(Collider other) 
+ void OnTriggerEnter(Collider other)
     {
  // Check if the object the player collided with has the "PickUp" tag.
- if (other.gameObject.CompareTag("PickUp")) 
+ if (other.gameObject.CompareTag("Pickup")) 
         {
  // Deactivate the collided object (making it disappear).
             other.gameObject.SetActive(false);
+            count = count + 1; // When the player hits a coin, the count will increase by one.
+
+            SetCountText();
         }
     }
-
-
 }
