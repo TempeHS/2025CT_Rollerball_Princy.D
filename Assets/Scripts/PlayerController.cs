@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 using TMPro;
 
 public class PlayerController : MonoBehaviour
-{
  // Rigidbody of the player.
  private Rigidbody rb; 
  
@@ -50,20 +49,20 @@ public class PlayerController : MonoBehaviour
          winTextObject.SetActive(true);
        }
    }
-
- // FixedUpdate is called once per fixed frame-rate frame.
+private void OnCollisionEnter(Collision collision)
+{
+ if (collision.gameObject.CompareTag("Enemy"))
+    {
+ // Destroy the current object
+        Destroy(gameObject); 
+        winTextObject.gameObject.SetActive(true);
+        winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+ 
+    }
  private void FixedUpdate()
     {
  // Create a 3D movement vector using the X and Y inputs.
         Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
-
-private void OnCollisionEnter(Collision collision)
-{
-   if (collision.gameObject.CompareTag("Enemy"))
-   {
-      // Destructs the player.
-   }
-}
 
  // Apply force to the Rigidbody to move the player.
         rb.AddForce(movement * speed); 
