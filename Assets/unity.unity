@@ -258,6 +258,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37806626}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
+>>>>>>> parent of c9f1449 (improved navmesh)
+=======
 >>>>>>> parent of c9f1449 (improved navmesh)
 --- !u!1 &140344229 stripped
 GameObject:
@@ -1424,6 +1427,9 @@ MonoBehaviour:
 <<<<<<< HEAD
 =======
   winTextObject: {fileID: 37806626}
+<<<<<<< HEAD
+>>>>>>> parent of c9f1449 (improved navmesh)
+=======
 >>>>>>> parent of c9f1449 (improved navmesh)
 --- !u!1 &1377276674
 GameObject:
@@ -3066,4 +3072,7 @@ SceneRoots:
 =======
   - {fileID: 310396835}
   - {fileID: 1963010676}
+<<<<<<< HEAD
+>>>>>>> parent of c9f1449 (improved navmesh)
+=======
 >>>>>>> parent of c9f1449 (improved navmesh)
