@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
  void OnTriggerEnter(Collider other) 
     {
  // Check if the object the player collided with has the "PickUp" tag.
- if (other.gameObject.CompareTag("PickUp")) 
+ if (other.gameObject.CompareTag("Pickup")) 
         {
  // Deactivate the collided object (making it disappear).
             other.gameObject.SetActive(false);
@@ -81,10 +81,10 @@ public class PlayerController : MonoBehaviour
  void SetCountText() 
     {
  // Update the count text with the current count.
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Score: 7/" + count.ToString();
 
  // Check if the count has reached or exceeded the win condition.
- if (count >= 12)
+ if (count >= 7)
         {
  // Display the win text.
             winTextObject.SetActive(true);
