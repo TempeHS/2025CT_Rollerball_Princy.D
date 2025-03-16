@@ -99,7 +99,7 @@ private void OnCollisionEnter(Collision collision)
  if (collision.gameObject.CompareTag("Enemy"))
     {
  // Destroy the current object
-        Destroy(gameObject); 
+        gameObject.SetActive(false);
  
  // Update the winText to display "You Lose!"
         winTextObject.gameObject.SetActive(true);
