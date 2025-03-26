@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
  // UI object to display winning text.
  public GameObject winTextObject;
+ public GameObject loseTextObject;
 
  // Start is called before the first frame update.
  void Start()
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
  // Initially set the win text to be inactive.
         winTextObject.SetActive(false);
+        loseTextObject.SetActive(false);
     }
  
  // This function is called when a move input is detected.
@@ -53,13 +55,46 @@ public class PlayerController : MonoBehaviour
  // FixedUpdate is called once per fixed frame-rate frame.
  private void FixedUpdate() 
     {
+       float moveHorizontal = Input.GetAxis("Horizontal");
+       float moveVertical = Input.GetAxis ("Vertical");
  // Create a 3D movement vector using the X and Y inputs.
         Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
-
+    GetComponent<Rigidbody>().AddForce (movement * speed * Time.deltaTime);
  // Apply force to the Rigidbody to move the player.
         rb.AddForce(movement * speed); 
+        {
+            if (Input.GetKeyDown ("space") && GetComponent<Rigidbody>().transform.position.y <= 0.6250001f) {
+                Vector3 jump = new Vector3 (0.0f, 200.0f, 0.0f);
+
+                GetComponent<Rigidbody>().AddForce (jump);
+            }
+        }
     }
 
+
+
+// PRAY.
+/*void FixedUpdate ()
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis ("Vertical");
+
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+        GetComponent<Rigidbody>().AddForce (movement * speed * Time.deltaTime);
+
+        {
+            if (Input.GetKeyDown ("space") && GetComponent<Rigidbody>().transform.position.y <= 0.6250001f) {
+                Vector3 jump = new Vector3 (0.0f, 200.0f, 0.0f);
+
+                GetComponent<Rigidbody>().AddForce (jump);
+            }
+        }
+
+    }
+*/
+
+//
  
  void OnTriggerEnter(Collider other) 
     {
@@ -102,8 +137,7 @@ private void OnCollisionEnter(Collision collision)
         gameObject.SetActive(false);
  
  // Update the winText to display "You Lose!"
-        winTextObject.gameObject.SetActive(true);
-        winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+        loseTextObject.gameObject.SetActive(true);
  
     }
 
