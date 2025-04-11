@@ -775,7 +775,7 @@ PrefabInstance:
     - target: {fileID: 2654484886718504403, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
       propertyPath: m_Name
-      value: coin gaming (2)
+      value: coin 3
       objectReference: {fileID: 0}
     - target: {fileID: 4042242121542334603, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
@@ -853,7 +853,7 @@ PrefabInstance:
     - target: {fileID: 2654484886718504403, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
       propertyPath: m_Name
-      value: coin gaming (3)
+      value: coin 4
       objectReference: {fileID: 0}
     - target: {fileID: 4042242121542334603, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
@@ -1935,7 +1935,7 @@ PrefabInstance:
     - target: {fileID: 2654484886718504403, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
       propertyPath: m_Name
-      value: coin gaming (1)
+      value: coin 2
       objectReference: {fileID: 0}
     - target: {fileID: 4042242121542334603, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
@@ -2564,7 +2564,7 @@ PrefabInstance:
     - target: {fileID: 2654484886718504403, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
       propertyPath: m_Name
-      value: coin gaming (6)
+      value: coin 6
       objectReference: {fileID: 0}
     - target: {fileID: 4042242121542334603, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
@@ -2786,7 +2786,7 @@ PrefabInstance:
     - target: {fileID: 2654484886718504403, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
       propertyPath: m_Name
-      value: coin gaming
+      value: coin
       objectReference: {fileID: 0}
     - target: {fileID: 4042242121542334603, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
@@ -2864,7 +2864,7 @@ PrefabInstance:
     - target: {fileID: 2654484886718504403, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
       propertyPath: m_Name
-      value: coin gaming (5)
+      value: coin 7
       objectReference: {fileID: 0}
     - target: {fileID: 4042242121542334603, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
@@ -2942,7 +2942,7 @@ PrefabInstance:
     - target: {fileID: 2654484886718504403, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
       propertyPath: m_Name
-      value: coin gaming (4)
+      value: coin 5
       objectReference: {fileID: 0}
     - target: {fileID: 4042242121542334603, guid: f427863c5fce9dc49a3741ffc499c643,
         type: 3}
